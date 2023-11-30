@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 import { ContextType } from "./models/models";
 
 export const Context = createContext<ContextType>({
@@ -6,7 +6,7 @@ export const Context = createContext<ContextType>({
 	changeLanguage: () => {},
 });
 
-const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
 	const [language, setLanguage] = useState<"EN" | "AL">("EN");
 
 	function changeLanguage() {

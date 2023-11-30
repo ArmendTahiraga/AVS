@@ -1,4 +1,5 @@
-import React from "react";import logo from "../../images/logo2.png";
+import React from "react";
+import logo from "../../images/logo2.png";
 import { useContext } from "react";
 import { Context } from "../Context";
 
