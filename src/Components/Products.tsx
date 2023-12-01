@@ -1,11 +1,6 @@
-import { useContext } from "react";
-import { Context } from "../Context";
-
 const Products = () => {
-	const { productsRef } = useContext(Context);
-
 	return (
-		<div className="grid grid-cols-5 grid-rows-6 gap-7 px-40" ref={productsRef}>
+		<div className="grid grid-cols-5 grid-rows-6 gap-7 px-40">
 			<div className="row-start-1 col-start-1 row-end-3 col-end-4 bg-white rounded-lg h-52"></div>
 			<div className="row-start-1 col-start-4 row-end-3 col-end-6 bg-white rounded-lg h-52"></div>
 			<div className="row-start-3 col-start-1 row-end-5 col-end-3 bg-white rounded-lg h-52"></div>
