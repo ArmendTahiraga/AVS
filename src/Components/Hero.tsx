@@ -1,6 +1,4 @@
 import Reveal from "./Reveal";
-import Website3D from "./Website3D";
-
 const Hero = () => {
 	return (
 		<div className="h-hero flex justify-between items-center">
@@ -20,9 +18,7 @@ const Hero = () => {
 					</p>
 				</Reveal>
 			</div>
-			<div className="w-3/5 h-full">
-				<Website3D />
-			</div>
+			<div className="w-3/5 h-full">{/* <Website3D /> */}</div>
 		</div>
 	);
 };
