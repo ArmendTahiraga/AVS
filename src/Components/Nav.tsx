@@ -10,15 +10,15 @@ const Nav: React.FC = () => {
 			<div className="bg-[#00000047] w-max h-12 rounded-3xl flex justify-between items-center mx-auto px-7 border border-gray-300">
 				<img src={logo} className="me-20 w-20" alt="logo" />
 				<div>
-					<p className="text-gray-100 inline font-inter font-bold cursor-pointer">
+					<a href="#products" className="text-gray-100 inline font-inter font-bold cursor-pointer">
 						{language === "EN" ? "Products" : "Produktet"}
-					</p>
-					<p className="text-gray-100 inline font-inter font-bold cursor-pointer ms-11">
+					</a>
+					<a href="#services" className="text-gray-100 inline font-inter font-bold cursor-pointer ms-11">
 						{language === "EN" ? "Services" : "Shërbimet"}
-					</p>
-					<p className="text-gray-100 inline font-inter font-bold cursor-pointer ms-11">
-						{language === "EN" ? "About us" : "Rreth nesh"}
-					</p>
+					</a>
+					<a href="#about" className="text-gray-100 inline font-inter font-bold cursor-pointer ms-11">
+						{language === "EN" ? "About" : "Rreth"}
+					</a>
 				</div>
 			</div>
 			<div className="absolute top-[40px] right-14">
