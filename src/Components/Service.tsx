@@ -5,7 +5,7 @@ import { Context } from "../Context";
 const Service: React.FC<ServiceType> = ({ products, descriptionEN, descriptionAL, serviceNameEN, serviceNameAL }) => {
 	const { language } = useContext(Context);
 	return (
-		<div className="text-white service font-inter backdrop-blur-lg brightness-100 border border-[#464646] rounded-xl px-4 py-3 w-[25%]">
+		<div className="text-white service font-inter backdrop-blur-lg brightness-100 border border-[#464646] rounded-xl px-4 py-3 w-[90%] md:w-[25%] mx-auto md:mx-0 mb-7 md:mb-0">
 			<div>
 				<h1 className="text-xl font-bold text-center mb-5">{language === "EN" ? serviceNameEN : serviceNameAL}</h1>
 				<div className="mb-5">

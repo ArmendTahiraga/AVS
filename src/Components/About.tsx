@@ -5,9 +5,9 @@ const About = () => {
 	const { language } = useContext(Context);
 
 	return (
-		<div className="about-us w-[90%] mx-auto bg-contain bg-no-repeat bg-center mb-40" id="about">
-			<div className="flex justify-center items-center px-20 min-h-[40vh] bg-[#ffffff0f] border rounded-2xl border-[#ffffff1a] backdrop-blur-xl brightness-100">
-				<p className="text-white text-justify text-sm font-inter">
+		<div className="about-us w-[90%] mx-auto bg-contain bg-no-repeat bg-center mb-24 md:mb-40" id="about">
+			<div className="flex justify-center items-center px-2 py-6 md:py-0 md:px-10 lg:px-20 min-h-[40vh] bg-[#ffffff0f] border rounded-2xl border-[#ffffff1a] backdrop-blur-xl brightness-100">
+				<p className="text-white text-center md:text-justify text-sm font-inter">
 					{language === "EN"
 						? `Welcome to Albanian Visual Studios (AVS), your one-stop destination for a spectrum of online services that elevate your 
                     digital presence. At AVS, we specialize in crafting captivating websites, eye-catching posters, distinctive logos, professional 

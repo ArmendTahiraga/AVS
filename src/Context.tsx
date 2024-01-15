@@ -7,17 +7,24 @@ export const Context = createContext<ContextType>({
 	productsRef: React.createRef<HTMLDivElement>(),
 	heights: [0],
 	hasScrolled: false,
+	isMenuActive: false,
+	handleMenuClick: () => {},
 });
 
 const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
 	const [language, setLanguage] = useState<"EN" | "AL">("EN");
 	const [hasScrolled, setHasScrolled] = useState<boolean>(false);
+	const [isMenuActive, setIsMenuActive] = useState<boolean>(false);
 	const [heights, setHeights] = useState<number[]>([0]);
 
 	const productsRef = useRef<HTMLDivElement>(null);
 
 	const changeLanguage = () => {
 		setLanguage((prevLanguage) => (prevLanguage === "EN" ? "AL" : "EN"));
+	};
+
+	const handleMenuClick = () => {
+		setIsMenuActive((prevIsMenuActive) => !prevIsMenuActive);
 	};
 
 	useEffect(() => {
@@ -46,6 +53,8 @@ const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
 		productsRef,
 		heights,
 		hasScrolled,
+		isMenuActive,
+		handleMenuClick,
 	};
 
 	return <Context.Provider value={contextValue}>{children}</Context.Provider>;

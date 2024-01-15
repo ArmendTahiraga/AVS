@@ -2,9 +2,10 @@ import { useContext } from "react";
 import { Context } from "../Context";
 import Reveal from "./Reveal";
 import { useTypewriter } from "react-simple-typewriter";
+import { motion } from "framer-motion";
 
 const Hero = () => {
-	const { language } = useContext(Context);
+	const { language, isMenuActive } = useContext(Context);
 	const [text] = useTypewriter({
 		words: ["AVS", "Albanian Visual Solutions"],
 		loop: 1.5,
@@ -14,10 +15,23 @@ const Hero = () => {
 	});
 
 	return (
-		<div className="h-hero flex justify-between items-center">
-			<div className="w-2/5">
+		<motion.div
+			className="h-hero flex justify-between items-center flex-col md:flex-row"
+			variants={{
+				hidden: {
+					paddingTop: "80px",
+				},
+				visible: {
+					paddingTop: "20px",
+				},
+			}}
+			initial="hidden"
+			animate={isMenuActive ? "visible" : "hidden"}
+			transition={{ duration: 0.3 }}
+		>
+			<div className="w-11/12 md:w-2/5">
 				<Reveal width="fit-content">
-					<h1 className="text-gray-100 text-6xl font-inter font-bold mb-6 mt-[-12px]">
+					<h1 className="text-gray-100 text-4xl md:text-6xl font-inter font-bold mb-6 mt-[-12px]">
 						{language === "EN" ? "Hello, we are " : "Përshëndetje, ne jemi "}
 						<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#aabed7] to-[#2a3cdeb3] to-60%">
 							{text}
@@ -32,8 +46,8 @@ const Hero = () => {
 					</p>
 				</Reveal>
 			</div>
-			<div className="w-3/5 h-full">{/* <Website3D /> */}</div>
-		</div>
+			<div className="md:w-3/5 h-full">{/* <Website3D /> */}</div>
+		</motion.div>
 	);
 };
 

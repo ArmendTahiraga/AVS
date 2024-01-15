@@ -4,6 +4,8 @@ export type ContextType = {
 	productsRef: React.RefObject<HTMLDivElement>;
 	heights: number[];
 	hasScrolled: boolean;
+	isMenuActive: boolean;
+	handleMenuClick: () => void;
 };
 
 export type RevealType = {
