@@ -3,6 +3,7 @@ import email from "../../images/email.png";
 import phone from "../../images/phone.png";
 import location from "../../images/location.png";
 import instagram from "../../images/instagram.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
 	return (
@@ -29,7 +30,9 @@ const Footer = () => {
 					</div>
 				</div>
 				<div className="md:w-[30%] order-1 md:order-2 mb-5 md:mb-0">
-					<img src={logo} alt="" className="md:w-[40%] md:ms-auto" />
+					<Link to="/">
+						<img src={logo} alt="" className="md:w-[40%] md:ms-auto" />
+					</Link>
 				</div>
 			</div>
 		</div>

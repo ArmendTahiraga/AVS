@@ -17,6 +17,12 @@ html {
 	}
 }
 
+@media (min-width: 768px) {
+	.p-hero {
+		padding-top: 0 !important;
+	}
+}
+
 .service {
 	background: rgb(20, 16, 29);
 	background: linear-gradient(180deg, rgba(57, 56, 62, 0.6) 0%, rgba(255, 255, 255, 0) 90%);

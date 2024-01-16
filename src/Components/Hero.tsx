@@ -16,7 +16,7 @@ const Hero = () => {
 
 	return (
 		<motion.div
-			className="h-hero flex justify-between items-center flex-col md:flex-row"
+			className="h-hero flex justify-between items-center flex-col md:flex-row p-hero"
 			variants={{
 				hidden: {
 					paddingTop: "80px",

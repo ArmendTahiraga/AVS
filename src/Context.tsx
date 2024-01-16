@@ -12,7 +12,7 @@ export const Context = createContext<ContextType>({
 });
 
 const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
-	const [language, setLanguage] = useState<"EN" | "AL">("EN");
+	const [language, setLanguage] = useState<"EN" | "AL">("AL");
 	const [hasScrolled, setHasScrolled] = useState<boolean>(false);
 	const [isMenuActive, setIsMenuActive] = useState<boolean>(false);
 	const [heights, setHeights] = useState<number[]>([0]);

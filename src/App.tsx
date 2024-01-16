@@ -1,24 +1,12 @@
-import About from "./Components/About";
-import Footer from "./Components/Footer";
-import Guide from "./Components/Guide";
-import Hero from "./Components/Hero";
+import { Outlet } from "react-router-dom";
 import Nav from "./Components/Nav";
-import Products from "./Components/Products";
-import Services from "./Components/Services";
+import Footer from "./Components/Footer";
 
 function App() {
 	return (
 		<div className="bg-black">
 			<Nav />
-			<div className="grid grid-cols-12">
-				<Guide />
-				<div className="col-span-11">
-					<Hero />
-					<Products />
-					<Services />
-					<About />
-				</div>
-			</div>
+			<Outlet />
 			<Footer />
 		</div>
 	);

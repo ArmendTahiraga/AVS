@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../Context";
 import logo from "../../images/logo2.png";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Nav: React.FC = () => {
 	const { language, changeLanguage, isMenuActive, handleMenuClick } = useContext(Context);
@@ -9,7 +10,9 @@ const Nav: React.FC = () => {
 	return (
 		<div className="w-full pt-7">
 			<div className="bg-[#00000047] w-4/5 md:w-max h-12 rounded-3xl flex justify-between items-center mx-auto ps-7 pe-4 md:px-7 border border-gray-300">
-				<img src={logo} className="me-20 w-20" alt="logo" />
+				<Link to="/">
+					<img src={logo} className="me-20 w-20" alt="logo" />
+				</Link>
 				<div className="hidden md:block">
 					<a href="#products" className="text-gray-100 inline font-inter font-bold cursor-pointer">
 						{language === "EN" ? "Products" : "Produktet"}
