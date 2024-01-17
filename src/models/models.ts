@@ -2,8 +2,6 @@ export type ContextType = {
 	language: "EN" | "AL";
 	changeLanguage: () => void;
 	productsRef: React.RefObject<HTMLDivElement>;
-	servicesRef: React.RefObject<HTMLDivElement>;
-	aboutRef: React.RefObject<HTMLDivElement>;
 	heights: number[];
 	hasScrolled: boolean;
 	isMenuActive: boolean;
