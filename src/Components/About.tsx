@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { Context } from "../Context";
 
 const About = () => {
-	const { language } = useContext(Context);
+	const { language, aboutRef } = useContext(Context);
 
 	return (
-		<div className="about-us w-[90%] mx-auto bg-contain bg-no-repeat bg-center mb-24 md:mb-40" id="about">
+		<div className="about-us w-[90%] mx-auto bg-contain bg-no-repeat bg-center mb-24 md:mb-40" id="about" ref={aboutRef}>
 			<div className="flex justify-center items-center px-2 py-6 md:py-0 md:px-10 lg:px-20 min-h-[40vh] bg-[#ffffff0f] border rounded-2xl border-[#ffffff1a] backdrop-blur-xl brightness-100">
 				<p className="text-white text-center md:text-justify text-sm font-inter">
 					{language === "EN"
