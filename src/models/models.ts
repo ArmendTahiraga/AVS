@@ -2,10 +2,13 @@ export type ContextType = {
 	language: "EN" | "AL";
 	changeLanguage: () => void;
 	productsRef: React.RefObject<HTMLDivElement>;
+	serviceRef: React.RefObject<HTMLDivElement>;
+	aboutRef: React.RefObject<HTMLDivElement>;
 	heights: number[];
 	hasScrolled: boolean;
 	isMenuActive: boolean;
 	handleMenuClick: () => void;
+	width: number;
 };
 
 export type RevealType = {

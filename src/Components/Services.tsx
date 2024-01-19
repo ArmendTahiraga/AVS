@@ -1,13 +1,14 @@
-import { useContext } from "react";import { Context } from "../Context";
+import { useContext } from "react";
+import { Context } from "../Context";
 import Service from "./Service";
 import { services } from "../Data/data";
 import { Link } from "react-router-dom";
 
 const Services = () => {
-	const { language } = useContext(Context);
+	const { language, serviceRef } = useContext(Context);
 
 	return (
-		<div id="services" className="w-full mb-24 md:mb-40">
+		<div id="services" className="w-full mb-24 md:mb-40" ref={serviceRef}>
 			<div className="flex justify-around items-center flex-col md:flex-row w-full">
 				{services.map((service, index) => (
 					<Service

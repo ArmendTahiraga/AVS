@@ -1,10 +1,13 @@
-import { motion } from "framer-motion";
+/* eslint-disable no-mixed-spaces-and-tabs */ import { motion } from "framer-motion";
 import { useContext } from "react";
 import { Context } from "../Context";
 
 const Guide = () => {
-	const { heights, hasScrolled, language } = useContext(Context);
+	const { heights, hasScrolled, language, aboutRef, serviceRef, productsRef, width } = useContext(Context);
 
+	const vhAbout = width > 767 ? "- 10vh)" : "- 75vh)";
+	const vhServices = width > 767 ? "- 5vh)" : "- 0vh)";
+	("#1A07F7, #E751FF");
 	return (
 		<div className="col-span-1 flex justify-start items-center flex-col">
 			<motion.div
@@ -28,13 +31,23 @@ const Guide = () => {
 				animate="visible"
 				transition={{ duration: 0.3, delay: 0.5 }}
 			>
-				<p className="-rotate-90">{language === "EN" ? "PRODUCTS" : "PRODUKTET"}</p>
+				<p className="-rotate-90 mb-16">{language === "EN" ? "PRODUCTS" : "PRODUKTET"}</p>
 			</motion.div>
 			<motion.div
-				className="w-3 bg-gradient-to-b from-[#2d52d800] to-[#002aff] mb-16"
+				className="w-3 bg-gradient-to-b from-[#002aff] to-[#e751ff] mb-16"
 				variants={{
 					hidden: { opacity: 0, height: 0 },
-					visible: { opacity: 1, height: `calc(${heights[0]}px - 20vh)` },
+					visible: {
+						opacity: 1,
+						height: hasScrolled
+							? `calc(${
+									productsRef.current!.clientHeight -
+									heights[0] +
+									(27 * window.innerHeight) / 100 +
+									serviceRef.current!.clientHeight
+							  }px ${vhServices}`
+							: 0,
+					},
 				}}
 				initial="hidden"
 				animate="visible"
@@ -50,13 +63,23 @@ const Guide = () => {
 				animate="visible"
 				transition={{ duration: 0.3, delay: 0.5 }}
 			>
-				<p className="-rotate-90">{language === "EN" ? "SERVICES" : "SHËRBIMET"}</p>
+				<p className="-rotate-90 mb-16">{language === "EN" ? "SERVICES" : "SHËRBIMET"}</p>
 			</motion.div>
 			<motion.div
-				className="w-3 bg-gradient-to-b from-[#2d52d800] to-[#002aff] mb-16"
+				className="w-3 bg-gradient-to-b from-[#e751ff] to-[#15f146] mb-16"
 				variants={{
 					hidden: { opacity: 0, height: 0 },
-					visible: { opacity: 1, height: `calc(${heights[0]}px - 20vh)` },
+					visible: {
+						opacity: 1,
+						height: hasScrolled
+							? `calc(${
+									productsRef.current!.clientHeight -
+									heights[0] +
+									(27 * window.innerHeight) / 100 +
+									aboutRef.current!.clientHeight
+							  }px ${vhAbout}`
+							: 0,
+					},
 				}}
 				initial="hidden"
 				animate="visible"
@@ -72,7 +95,7 @@ const Guide = () => {
 				animate="visible"
 				transition={{ duration: 0.3, delay: 0.5 }}
 			>
-				<p className="-rotate-90">{language === "EN" ? "ABOUT" : "RRETH"}</p>
+				<p className="-rotate-90 -mt-5">{language === "EN" ? "ABOUT" : "RRETH"}</p>
 			</motion.div>
 		</div>
 	);

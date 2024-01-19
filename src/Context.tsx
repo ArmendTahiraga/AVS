@@ -1,14 +1,16 @@
-import React, { createContext, useEffect, useRef, useState } from "react";
-import { ContextType } from "./models/models";
+import React, { createContext, useEffect, useRef, useState } from "react";import { ContextType } from "./models/models";
 
 export const Context = createContext<ContextType>({
 	language: "EN",
 	changeLanguage: () => {},
 	productsRef: React.createRef<HTMLDivElement>(),
+	serviceRef: React.createRef<HTMLDivElement>(),
+	aboutRef: React.createRef<HTMLDivElement>(),
 	heights: [0],
 	hasScrolled: false,
 	isMenuActive: false,
 	handleMenuClick: () => {},
+	width: 0,
 });
 
 const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
@@ -16,8 +18,11 @@ const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
 	const [hasScrolled, setHasScrolled] = useState<boolean>(false);
 	const [isMenuActive, setIsMenuActive] = useState<boolean>(false);
 	const [heights, setHeights] = useState<number[]>([0]);
+	const [width, setWidth] = useState<number>(window.innerWidth);
 
 	const productsRef = useRef<HTMLDivElement>(null);
+	const serviceRef = useRef<HTMLDivElement>(null);
+	const aboutRef = useRef<HTMLDivElement>(null);
 
 	const changeLanguage = () => {
 		setLanguage((prevLanguage) => (prevLanguage === "EN" ? "AL" : "EN"));
@@ -37,6 +42,7 @@ const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
 
 		window.addEventListener("scroll", handleScroll);
 		window.addEventListener("resize", () => {
+			setWidth(window.innerWidth);
 			if (hasScrolled) {
 				setHeights(() => [productsRef.current!.offsetTop]);
 			}
@@ -55,6 +61,9 @@ const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
 		hasScrolled,
 		isMenuActive,
 		handleMenuClick,
+		serviceRef,
+		aboutRef,
+		width,
 	};
 
 	return <Context.Provider value={contextValue}>{children}</Context.Provider>;
