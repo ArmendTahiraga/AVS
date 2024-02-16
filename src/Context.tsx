@@ -1,4 +1,5 @@
-import React, { createContext, useEffect, useRef, useState } from "react";import { ContextType } from "./models/models";
+import React, { createContext, useEffect, useRef, useState } from "react";
+import { ContextType } from "./models/models";
 
 export const Context = createContext<ContextType>({
 	language: "EN",
@@ -11,6 +12,8 @@ export const Context = createContext<ContextType>({
 	isMenuActive: false,
 	handleMenuClick: () => {},
 	width: 0,
+	orderModal: false,
+	handleOrderModal: () => {},
 });
 
 const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
@@ -19,6 +22,7 @@ const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
 	const [isMenuActive, setIsMenuActive] = useState<boolean>(false);
 	const [heights, setHeights] = useState<number[]>([0]);
 	const [width, setWidth] = useState<number>(window.innerWidth);
+	const [orderModal, setOrderModal] = useState<boolean>(false);
 
 	const productsRef = useRef<HTMLDivElement>(null);
 	const serviceRef = useRef<HTMLDivElement>(null);
@@ -30,6 +34,10 @@ const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
 
 	const handleMenuClick = () => {
 		setIsMenuActive((prevIsMenuActive) => !prevIsMenuActive);
+	};
+
+	const handleOrderModal = () => {
+		setOrderModal((prevOrderModal) => !prevOrderModal);
 	};
 
 	useEffect(() => {
@@ -64,6 +72,8 @@ const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
 		serviceRef,
 		aboutRef,
 		width,
+		orderModal,
+		handleOrderModal,
 	};
 
 	return <Context.Provider value={contextValue}>{children}</Context.Provider>;

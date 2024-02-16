@@ -9,6 +9,8 @@ export type ContextType = {
 	isMenuActive: boolean;
 	handleMenuClick: () => void;
 	width: number;
+	orderModal: boolean;
+	handleOrderModal: () => void;
 };
 
 export type RevealType = {

@@ -5,9 +5,9 @@ import { Context } from "../Context";
 const Guide = () => {
 	const { heights, hasScrolled, language, aboutRef, serviceRef, productsRef, width } = useContext(Context);
 
-	const vhAbout = width > 767 ? "- 10vh)" : "- 75vh)";
-	const vhServices = width > 767 ? "- 5vh)" : "- 0vh)";
-	("#1A07F7, #E751FF");
+	const vhAbout = width > 767 ? "- 10vh)" : "- 65vh)";
+	const vhServices = width > 767 ? "- 5vh)" : "- 160vh)";
+
 	return (
 		<div className="col-span-1 flex justify-start items-center flex-col">
 			<motion.div

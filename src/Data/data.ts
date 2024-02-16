@@ -1,4 +1,5 @@
-import { ServiceType } from "../models/models";export const services: ServiceType[] = [
+import { ServiceType } from "../models/models";
+export const services: ServiceType[] = [
 	{
 		serviceNameEN: "Budget Package",
 		serviceNameAL: "Paketa buxhetore",
@@ -120,3 +121,24 @@ import { ServiceType } from "../models/models";export const services: ServiceTyp
 			"Paketa e shpejtë siguron që porosia juaj të ketë përparësinë kryesore si në përpjekje ashtu edhe në kohë, por me një kosto më të lartë.",
 	},
 ];
+
+export const dropIn = {
+	hidden: {
+		top: "-50%",
+		opacity: 0,
+	},
+	visible: {
+		top: "50%",
+		opacity: 1,
+		transition: {
+			duration: 0.5,
+			type: "spring",
+			damping: 25,
+			stiffness: 500,
+		},
+	},
+	exit: {
+		top: "-50%",
+		opacity: 0,
+	},
+};

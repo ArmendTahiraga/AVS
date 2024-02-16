@@ -82,3 +82,54 @@ html {
 .ham.active .middle {
 	transform: rotate(90deg);
 }
+
+.module {
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.not-available-container {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #1c1d1e;
+	border-radius: 15px;
+	width: 300px;
+	height: 250px;
+	z-index: 999;
+	padding: 10px 20px;
+}
+
+.not-available-title {
+	margin: 20px 0 10px 0;
+	font-size: 1.3rem;
+	text-align: center;
+}
+
+.not-available-button {
+	margin-top: 70px;
+	display: block;
+	text-align: center;
+	font-size: 1.1rem;
+	cursor: pointer;
+	background-color: #e3e8e2;
+	border-radius: 7px;
+	padding: 7px 10px;
+}
+
+@media only screen and (max-width: 768px) {
+	.not-available-container {
+		width: 250px;
+	}
+
+	.not-available-button {
+		margin-top: 40px;
+	}
+}
+
+.close {
+	display: block;
+	text-align: right;
+	color: #fff;
+	margin: 0;
+}

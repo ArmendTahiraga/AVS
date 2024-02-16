@@ -6,7 +6,7 @@ export default {
 			fontFamily: {
 				inter: ["Inter", "sans-serif"],
 			},
-			height: {
+			minHeight: {
 				hero: "calc(100vh - 76px)",
 			},
 		},
