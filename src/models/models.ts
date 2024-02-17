@@ -11,6 +11,7 @@ export type ContextType = {
 	width: number;
 	orderModal: boolean;
 	handleOrderModal: () => void;
+	loading: boolean;
 };
 
 export type RevealType = {

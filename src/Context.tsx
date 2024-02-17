@@ -1,5 +1,4 @@
-import React, { createContext, useEffect, useRef, useState } from "react";
-import { ContextType } from "./models/models";
+import React, { createContext, useEffect, useRef, useState } from "react";import { ContextType } from "./models/models";
 
 export const Context = createContext<ContextType>({
 	language: "EN",
@@ -14,6 +13,7 @@ export const Context = createContext<ContextType>({
 	width: 0,
 	orderModal: false,
 	handleOrderModal: () => {},
+	loading: true,
 });
 
 const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
@@ -23,6 +23,7 @@ const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
 	const [heights, setHeights] = useState<number[]>([0]);
 	const [width, setWidth] = useState<number>(window.innerWidth);
 	const [orderModal, setOrderModal] = useState<boolean>(false);
+	const [loading, setLoading] = useState<boolean>(true);
 
 	const productsRef = useRef<HTMLDivElement>(null);
 	const serviceRef = useRef<HTMLDivElement>(null);
@@ -61,6 +62,10 @@ const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
 		};
 	}, [hasScrolled]);
 
+	useEffect(() => {
+		setTimeout(() => setLoading(false), 1200);
+	}, []);
+
 	const contextValue: ContextType = {
 		language,
 		changeLanguage,
@@ -74,6 +79,7 @@ const ContextProvider: React.FC<{ children: JSX.Element }> = ({ children }) => {
 		width,
 		orderModal,
 		handleOrderModal,
+		loading,
 	};
 
 	return <Context.Provider value={contextValue}>{children}</Context.Provider>;
