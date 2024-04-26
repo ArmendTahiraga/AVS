@@ -5,8 +5,8 @@ import { Context } from "../Context";
 const Guide = () => {
 	const { heights, hasScrolled, language, aboutRef, serviceRef, productsRef, width } = useContext(Context);
 
-	const vhAbout = width > 767 ? "- 10vh)" : "- 65vh)";
-	const vhServices = width > 767 ? "- 5vh)" : "- 160vh)";
+	const vhServices = width > 767 ? "- 25vh)" : "- 175vh)";
+	const vhAbout = width > 767 ? "- 20vh)" : "- 250vh)";
 
 	return (
 		<div className="col-span-1 flex justify-start items-center flex-col">
