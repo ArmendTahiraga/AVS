@@ -7,8 +7,7 @@
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-		"preview": "vite preview",
-		"copy-assets": "cpy 'images/**/*.*' dist/assets"
+		"preview": "vite preview"
 	},
 	"dependencies": {
 		"@splinetool/react-spline": "^2.2.6",

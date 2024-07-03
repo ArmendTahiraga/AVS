@@ -1,7 +1,8 @@
-import logo from "../../images/logo2.png";import email from "../../images/email.png";
-import phone from "../../images/phone.png";
-import location from "../../images/location.png";
-import instagram from "../../images/instagram.png";
+import logo from "../../public/images/logo2.png";
+import email from "../../public/images/email.png";
+import phone from "../../public/images/phone.png";
+import location from "../../public/images/location.png";
+import instagram from "../../public/images/instagram.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
